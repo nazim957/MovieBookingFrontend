@@ -1,0 +1,48 @@
+<mat-toolbar color="primary">
+  <a 
+  routerLink="/"
+  mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>movie</mat-icon>
+  </a>
+  <span class="text">Movie Booking App</span>
+  <span class="example-spacer"></span>
+  <a 
+  *ngIf="!isLockedIn"
+  routerLink="/login"
+  mat-icon-button class="example-icon text  ml10 mr30 favorite-icon" aria-label="Example icon-button with heart icon">
+    <!-- <mat-icon>login</mat-icon> -->
+    <span>Login</span>
+  </a>
+  <a 
+  *ngIf="!isLockedIn"
+  routerLink="/signup"
+  mat-icon-button class="example-icon text favorite-icon ml20 mr70" aria-label="Example icon-button with heart icon">
+      <!-- <mat-icon>login</mat-icon> -->
+      <span>Sign up</span>
+    </a>
+    <a *ngIf="isLockedIn && login.getUserRole()=='ADMIN'"
+    mat-icon-button style="margin-right: 50px;" class="example-icon favorite-icon ml20 mr20 text" 
+    aria-label="Example icon-button with heart icon" routerLink="/admin/profile">
+    <!-- <mat-icon>login</mat-icon> -->
+    <strong style="text-transform: capitalize;">{{login.getUser().username}}</strong>
+  </a>
+  
+
+  <a *ngIf="isLockedIn && login.getUserRole()=='NORMAL'"
+  mat-icon-button style="margin-right: 50px;" class="example-icon favorite-icon ml20 mr20 text" 
+  aria-label="Example icon-button with heart icon"  routerLink="/user-dashboard">
+  <!-- <mat-icon>login</mat-icon> -->
+  <strong style="text-transform: capitalize;">{{login.getUser().username}}</strong>
+</a>
+
+  
+      <a 
+      (click)="logout()"
+    *ngIf="isLockedIn"
+  
+    mat-icon-button class="example-icon favorite-icon text  ml20 mr50" aria-label="Example icon-button with heart icon">
+        <!-- <mat-icon>login</mat-icon> -->
+        Logout
+      </a>
+    
+</mat-toolbar>

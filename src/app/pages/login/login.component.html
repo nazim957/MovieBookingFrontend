@@ -1,0 +1,51 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-6 offset-md-3">
+                <mat-card>
+                <div class="container text-center">
+                    <img src="../../../assets/logo.jpg" width="150" height="150" alt="" />
+                </div>
+                <h1 class="text-center">Login Here!!</h1>
+                 <!-- {{loginData | json }}   -->
+                <form action="" id="login" (ngSubmit)="formSubmit()">
+                    <!--user name field-->
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>User Name</mat-label>
+                        <input 
+                        [(ngModel)]="loginData.username"
+                        required 
+                        name="userName"
+                        matInput placeholder="Enter Here">
+                        <mat-hint>Valid UserName</mat-hint>
+                      </mat-form-field>
+                       <!--password field-->
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input 
+                        [(ngModel)]="loginData.password"
+                        name="password"
+                        type="password" required 
+                        name="userName"
+                        matInput placeholder="Enter Here">
+                      </mat-form-field>
+                      <div class="container text-center">
+                        <button type="submit" mat-raised-button color="primary">Login</button>
+                        <button class="ml10" type="reset" mat-raised-button color="accent">Reset</button>
+                        </div>
+                        <br>
+                        <div class="container text-center">
+                        <button mat-button color="primary" class="mr70"  routerLink="/forgot">Forgot Password?</button>
+                        <span class="ml40">New User ?</span>
+                        <button mat-button color="primary" class="mr10"  routerLink="/signup">Sign up</button>
+                    </div>
+
+                      </form>
+                      </mat-card>
+                </div>
+                </div>
+                </div>
+                </div>  
+            

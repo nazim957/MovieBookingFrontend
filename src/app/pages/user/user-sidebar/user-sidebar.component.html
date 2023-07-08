@@ -1,0 +1,20 @@
+<mat-card>
+    <mat-action-list>
+        <div mat-subheader>Menu</div>
+        <button routerLink="/user-dashboard" mat-list-item><mat-icon mat-list-icon>home</mat-icon>Home</button>
+        <button mat-list-item routerLink="/user-dashboard/viewmovies">
+            <mat-icon mat-list-icon>pageview</mat-icon>View Movies</button>
+         <!-- <button mat-list-item routerLink="/user-dashboard/addticket/:mid/:mname">
+            <mat-icon mat-list-icon>list</mat-icon>Add Tickets</button> -->
+        <!-- <button mat-list-item routerLink="/admin/viewmovies"> -->
+            <!-- <mat-icon mat-list-icon>add_circle_outline</mat-icon>Show Movies</button>
+        <button mat-list-item routerLink="/admin/showtickets"> -->
+            <!-- <mat-icon mat-list-icon>quiz</mat-icon>Delete Movie</button>
+        <button mat-list-item routerLink="/admin/add-quiz"> -->
+            <!-- <mat-icon mat-list-icon>add</mat-icon>Show Tickets</button>
+         <button mat-list-item routerLink="/admin/showtickets">  -->
+            <!-- <mat-icon mat-list-icon>logout</mat-icon>Logout</button> -->
+            <button mat-list-item (click)="logout()"> 
+                <mat-icon mat-list-icon>logout</mat-icon>Logout</button>
+    </mat-action-list>
+</mat-card>

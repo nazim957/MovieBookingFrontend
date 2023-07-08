@@ -1,0 +1,105 @@
+<div class="bootstrap-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <mat-card>
+          <div class="container text-center">
+            <img src="../../../assets/logo.jpg" width="150" height="150" alt="" />
+          </div>
+          <h1 class="text-center">Register Here!!</h1>
+          <!-- {{user | json}} -->
+          <form (ngSubmit)="formSubmit()" #registerForm="ngForm">
+            <!-- UserName Field -->
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>User Name</mat-label>
+              <input
+                required
+                [(ngModel)]="user.userName"
+                name="userName"
+                matInput
+                placeholder="Enter User Name"
+              />
+              <mat-hint>Username must be unique</mat-hint>
+            </mat-form-field>
+
+            <!-- Password Field -->
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Password</mat-label>
+              <input
+                required
+                [(ngModel)]="user.password"
+                name="password"
+                type="password"
+                matInput
+                placeholder="Enter Password"
+                #password="ngModel"
+                pattern="^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
+              />
+              <mat-hint>Password must be at least 8 characters with number and special character.</mat-hint>
+              <mat-error *ngIf="password.invalid && (password.dirty || password.touched)">
+                Password is required.
+              </mat-error>
+            </mat-form-field>
+            <br>
+
+            <!-- Email Field -->
+<mat-form-field class="full-width" appearance="outline">
+  <mat-label>Email Address</mat-label>
+  <input
+    required
+    [(ngModel)]="user.email"
+    name="email"
+    type="email"
+    matInput
+    placeholder="Enter Email Address"
+    #email="ngModel"
+    pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}"
+  />
+  <mat-hint>Please enter a valid email address.</mat-hint>
+  <mat-error *ngIf="email.invalid && (email.dirty || email.touched)">
+    Email is required or invalid.
+  </mat-error>
+</mat-form-field>
+
+
+<mat-form-field class="full-width" appearance="outline">
+  <mat-label>Security Question</mat-label>
+  <mat-select required [(ngModel)]="user.securityQuestion" name="securityQuestion1">
+    <mat-option value="">Select a security question</mat-option>
+    <mat-option value="What is your favorite book?">What is your favorite book?</mat-option>
+    <mat-option value="What is your first nickname?">What is your first nickname?</mat-option>
+    <mat-option value="What is the name of your first pet?">What is the name of your first pet?</mat-option>
+  </mat-select>
+</mat-form-field>
+
+            <!-- Answer Field -->
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Answer</mat-label>
+              <input
+                required
+                [(ngModel)]="user.answer"
+                name="answer"
+                matInput
+                placeholder="Enter Answer"
+              />
+            </mat-form-field>
+
+            <div class="container text-center">
+              <button
+                type="submit"
+                mat-raised-button
+                color="primary"
+                [disabled]="registerForm.invalid"
+              >
+                Register
+              </button>
+              <button type="reset" style="margin-left: 20px;" mat-raised-button color="accent">
+                Clear
+              </button>
+            </div>
+          </form>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

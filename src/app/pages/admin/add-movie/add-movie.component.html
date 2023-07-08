@@ -1,0 +1,47 @@
+<mat-card>
+    <h1> Add New Movie</h1>
+  <div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <form (ngSubmit)="addMovie()">
+
+                <mat-form-field class="w100" appearance="fill">
+                    <mat-label>Enter Movie Id</mat-label>
+                    <input 
+                        [(ngModel)]="movieObj.movieId"
+                    type="text" name="movieid" placeholder="Enter Here" matInput />
+                </mat-form-field>
+
+                <mat-form-field class="w100" appearance="fill">
+                    <mat-label>Enter Movie Name</mat-label>
+                    <input
+                    [(ngModel)]="movieObj.movieName"
+                     matInput name="moviename" placeholder="Enter Here" matInput />
+                </mat-form-field>
+
+                <mat-form-field class="w100" appearance="fill">
+                    <mat-label>Enter Theatre Name</mat-label>
+                    <input 
+                    [(ngModel)]="movieObj.theaterName"
+                    matInput name="theatername" placeholder="Enter Here" matInput />
+                </mat-form-field>
+
+                <mat-form-field class="w100" appearance="fill">
+                    <mat-label>Enter Total Seats</mat-label>
+                    <input 
+                    [(ngModel)]="movieObj.totalSeats"
+                    matInput name="totalseats" placeholder="Enter Here" matInput />
+                </mat-form-field>
+
+                <div class="container text-center">
+                    <button type="submit" mat-raised-button color="primary">Add</button>
+                        <button type="reset" style="margin-left: 20px;" mat-raised-button color="accent">Clear</button>
+
+                  </div>
+            </form>
+        </div>
+    </div>
+  </div>
+</mat-card>
+
+<!-- {{movieObj | json}} -->

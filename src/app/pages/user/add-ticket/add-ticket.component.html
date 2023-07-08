@@ -1,0 +1,44 @@
+<div class="bootstrap-wrapper">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Add Tickets for {{ mname }}</h1>
+        <mat-card>
+          <mat-card-header>
+            <mat-card-subtitle>Enter the details</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <form (ngSubmit)="addTicket()">
+              <mat-form-field class="w100" appearance="fill">
+                <mat-label>Movie Id</mat-label>
+                <input readonly [(ngModel)]="ticketObj.movie_id_fk" matInput name="ticketObj.movie_id_fk" placeholder="Enter Here" matInput />
+              </mat-form-field>
+  
+              <mat-form-field class="w100" appearance="fill">
+                <mat-label>Enter Movie Name</mat-label>
+                <input readonly [(ngModel)]="ticketObj.movieName" matInput name="ticketObj.moviename" placeholder="Enter Here" matInput />
+              </mat-form-field>
+  
+              <mat-form-field class="w100" appearance="fill">
+                <mat-label>Enter Theatre Name</mat-label>
+                <input readonly [(ngModel)]="ticketObj.theaterName" matInput name="theatername" placeholder="Enter Here" matInput />
+              </mat-form-field>
+  
+              <mat-form-field class="w100" appearance="fill">
+                <mat-label>Enter No of Tickets</mat-label>
+                <input [(ngModel)]="ticketObj.bookedSeats" matInput name="bookedseats" placeholder="Enter Here" matInput />
+              </mat-form-field>
+  
+              <div class="error-message" *ngIf="ticketObj.bookedSeats != null && ticketObj.bookedSeats < 1">
+                Tickets should be greater than one.
+              </div>
+  
+              <div class="container text-center">
+                <button type="submit" mat-raised-button color="primary">Add</button>
+              </div>
+            </form>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+  
